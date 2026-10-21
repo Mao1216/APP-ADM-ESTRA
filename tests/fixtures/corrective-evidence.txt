@@ -1,0 +1,1 @@
+Evidencia simulada de calibración. Archivo únicamente para pruebas locales.
