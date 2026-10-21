@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  background-color: #F8FAFC;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Shared shell dimensions keep the content aligned with the navigation. */
+.biomet-app {
+  --sidebar-width: 224px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+.app-sidebar { width: var(--sidebar-width); }
+.app-sidebar nav button { font-size: 0.8125rem; line-height: 1.25rem; }
+.app-sidebar nav button > svg { width: 18px; height: 18px; flex-shrink: 0; }
+.app-sidebar nav > button { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+@media (min-width: 768px) {
+  .app-main { margin-left: var(--sidebar-width); }
+}
+
+.app-content h1 { font-size: 1.5rem; line-height: 2rem; letter-spacing: -0.025em; }
+.app-content h2 { font-size: 1rem; line-height: 1.5rem; }
+.app-content h3 { font-size: 0.875rem; line-height: 1.375rem; }
+.app-content p { overflow-wrap: anywhere; }
+
+/* Compact the recurring card and section spacing across all views. */
+.app-content :is(.p-5, .p-6) { padding: 1rem; }
+.app-content .p-8 { padding: 1.5rem; }
+.app-content .p-12 { padding: 2rem; }
+.app-content :is(.px-5, .px-6) { padding-left: 1rem; padding-right: 1rem; }
+.app-content :is(.py-5, .py-6) { padding-top: 1rem; padding-bottom: 1rem; }
+.app-content :is(.gap-5, .gap-6, .gap-8) { gap: 1rem; }
+.app-content :is(.mb-6, .mb-8) { margin-bottom: 1rem; }
+.app-content :is(.mt-6, .mt-8) { margin-top: 1rem; }
+.app-content :is(.space-y-5, .space-y-6, .space-y-8) > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .app-content { padding-bottom: 5.5rem; }
+  .app-content h1 { font-size: 1.375rem; line-height: 1.875rem; }
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  padding: 0.75rem;
+  border-color: #e2e8f0;
+}
+
+.request-form textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.request-form button[type="submit"],
+.request-form form > button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
